@@ -1,7 +1,30 @@
 <!DOCTYPE html>
 <html >
 <head>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+         var sum="";
+function display(val)
+{
+	if(val=='+/-')
+	{
+	sum+='(-'
+	}
+	else
+	{
+	sum+=val
+	}
+	document.getElementById("display").setAttribute("value",sum);
+}
+function evaluates(n)
+{
+	document.getElementById("display").setAttribute("value",eval(sum));
+}
+function clearscreen(m)
+{
+	sum=""
+	document.getElementById("display").setAttribute("value","");
+}
+</script>
 <style>
 table{
           margin: auto;
@@ -32,42 +55,45 @@ input {
 <tr>
 <th background-color:white>CALCULATOR</th>
 </tr>
-
 <tr>
        <td colspan="4">
-             <input type="text" name="display" id="display" style="width: 300px" disabled>
+             <input type="text" id="display" style="width: 320px" value=" ">
         </td>
 </tr>
 <tr>
-       <td><input type="button" name="AC" value="AC"></td>
-       <td><input type="button" name="sign" value="+/-"></td>
-       <td><input type="button" name="percent" value="%"></td>
-       <td> <input style="background-color:orange" type="button" name="divide" value=" &divide; "></td>
+       <td><input type="button" value="AC" onclick="clearscreen(value)"></td>
+       <td><input type="button" value="+/-" onclick="display('+/-')"></td>
+       <td><input type="button" value="%" onclick="display(value)"></td>
+       <td> <input style="background-color:orange" type="button" value="/ " onclick="display('/ ')"></td>
 </tr>
 <tr>
-       <td><input type="button" name="seven" value="7"></td>
-       <td><input type="button" name="eight" value="8"></td>
-       <td><input type="button" name="nine" value="9"></td>
-       <td><input style="background-color:orange" type="button" name="multiply" value=" &times; "></td>
+       <td><input type="button"value="7" onclick="display(value)"></td>
+       <td><input type="button"  value="8" onclick="display(value)"></td>
+       <td><input type="button"value="9" onclick="display(value)"></td>
+       <td><input style="background-color:orange" type="button"  value=" * " onclick="display('*')"></td>
 </tr>
 <tr>
-       <td><input type="button" name="four" value="4"></td>
-       <td><input type="button" name="five" value="5"></td>
-       <td><input type="button" name="six" value="6"></td>
-       <td><input style="background-color:orange" type="button" name="minus" value=" &minus; "></td>
+       <td><input type="button"  value="4" onclick="display(value)"></td>
+       <td><input type="button"  value="5" onclick="display(value)"></td>
+       <td><input type="button"value="6" onclick="display('6')"></td>
+       <td><input style="background-color:orange" type="button"  value=" - " onclick="display(' - ')"></td>
 </tr>
 <tr>
-       <td><input type="button" name="one" value="1"></td>
-       <td><input type="button" name="two" value="2"></td>
-       <td><input type="button" name="three" value="3"></td>
-       <td><input style="background-color:orange" type="button" name="plus" value=" &plus; "></td>
+       <td><input type="button" value="1" onclick="display(value)"></td>
+       <td><input type="button"  value="2" onclick="display(value)"></td>
+       <td><input type="button"  value="3" onclick="display(value)"></td>
+       <td><input style="background-color:orange" type="button" value=" + " onclick="display(' + ')"></td>
 </tr>
 <tr> 
-        <td ><input type="button" name="zero" value="0"></td>
-        <td></td>
-        <td><input type="button" name="pt" value=". "></td>
-        <td><input style="background-color:orange" type="button" name="equals" value=" &equals; "></td>     
-</tr>
+        <td ><input type="button" value="0" onclick="display(value)"></td>
+        <td><input type="button" value=")" onclick="display('\)')">
+        <td><input type="button"  value=". " onclick="display(value)"></td>
+        <td><input style="background-color:orange" type="button" value=" = " onclick="evaluates(value )"></td>     
+</tr> 
+<tr> 
+        <td><input type="button" value="(" onclick="display('\(')"></td>
+</tr>		
+
 </table>
 </body>
 </html>
